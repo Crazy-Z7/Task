@@ -1,5 +1,5 @@
 /****************************************
-#!name=汇率通知
+#!name=Qx极简汇率通知版
 #改自 Peng-YM chxm1023 keywos https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js
 https://raw.githubusercontent.com/Keywos/rule/main/module/JJHL.sgmodule 
 
