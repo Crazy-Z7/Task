@@ -1,4 +1,4 @@
-const cookieName = 'vx途虎'
+const cookieName = '途虎vx'
 const signurlKey = 'photonmang_signurl_tuhuvx'
 const signheaderKey = 'photonmang_signheader_tuhuvx'
 const photonmang = init()
