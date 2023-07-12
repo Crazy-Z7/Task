@@ -24,8 +24,8 @@ hostname = cl-gateway.tuhu.cn
 
 
 const cookieName = '途虎app'
-const signurlKey = 'photonmang_signurl_tuhu'
-const signheaderKey = 'photonmang_signheader_tuhu'
+const signurlKey = 'photonmang_signurl_tuhuapp'
+const signheaderKey = 'photonmang_signheader_tuhuapp'
 const photonmang = init()
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
