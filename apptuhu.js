@@ -4,7 +4,7 @@
 cookie获取:打开途虎app登录点击我的页面，获取完记得关闭重写
 
 [rewrite_local]
-https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhuCookie.js
+https://api.tuhu.cn/User/SelectUserVipInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhuCookie.js
 
 [task_local]
 40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhu.js, tag=途虎app积分签到,enabled=true
