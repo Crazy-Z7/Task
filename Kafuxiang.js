@@ -9,7 +9,7 @@ cookie获取:公众号搜索卡夫享氏新厨艺，右下角 参谋福利，点
 https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/getUserInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/KafuxiangCookie.js
 
 [task_local]
-30 0 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Kafuxiang.js, enabled=true
+30 0 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Kafuxiang.js, tag=卡夫享积分签到,enabled=true
 [MITM]
 hostname = fscrm.kraftheinz.net.cn
 *****************************************/
