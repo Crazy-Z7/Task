@@ -19,11 +19,7 @@ const signheaderKey = 'photonmang_signheader_tuhuapp'
 const photonmang = init()
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
-
-
-sign()  //签到
-
-
+sign()
 function sign() {
   const url = { url: `https://api.tuhu.cn/User/UserCheckInVersion1`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
