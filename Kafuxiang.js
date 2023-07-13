@@ -49,9 +49,6 @@ function sign() {
     photonmang.done()
   })
 }
-
-
-
 function init() {
   isSurge = () => {
     return undefined === this.$httpClient ? false : true
