@@ -25,7 +25,7 @@ sign()  //签到
 
 
 function sign() {
-  const url = { url: `^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040`, headers: JSON.parse(signheaderVal) }
+  const url = { url: `^httpshttps://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
   photonmang.post(url, (error, response, data) => {
     photonmang.log(`${cookieName}, data: ${data}`)
