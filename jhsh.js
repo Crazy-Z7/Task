@@ -4,7 +4,7 @@
 cookie获取:建行生活注册登录 获取完关掉Cookie脚本
 
 [rewrite_local]
-https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040 url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhshCookie.js
+^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhshCookie.js
 
 [task_local]
 40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhsh.js, tag=建行生活积分签到,enabled=true
