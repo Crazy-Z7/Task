@@ -20,11 +20,7 @@ const signheaderKey = 'photonmang_signheader_tuhuvx'
 const photonmang = init()
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
-
-
-sign()  //签到
-
-
+sign() 
 function sign() {
   const url = { url: `https://api.tuhu.cn/user/UserCheckInVersion1?channel=wxapp`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
