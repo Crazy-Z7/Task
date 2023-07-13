@@ -4,7 +4,7 @@
 cookie获取:建行生活注册登录 获取完关掉Cookie脚本
 
 [rewrite_local]
-https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhshCookie.js
+https://yunbusiness.ccb.com/basic_service/txCtrl url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhshCookie.js
 
 [task_local]
 40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhsh.js, tag=建行生活积分签到,enabled=true
