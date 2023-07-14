@@ -7,7 +7,7 @@
 3.圈x开抓包手动签到一次，然后关闭抓包搜https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040，把请求体内容全部复制到url.body='{复制到这个里面}' 然后保存到本地就可以了
 4.关闭Cookie脚本
 [rewrite_local]
-^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhshCookie.js
+^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/JhshCookie.js
 
 [task_local]
 40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js, tag=建行生活积分签到,enabled=true
