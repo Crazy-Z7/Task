@@ -1,7 +1,7 @@
 /**************************************
 作者:Zoo
-日期:2023.07.14
-cookie获取:下载建行生活app登录获取
+日期:2023.07.13
+cookie获取:建行生活注册登录 获取完关掉Cookie脚本
 
 [rewrite_local]
 ^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhshCookie.js
@@ -13,7 +13,7 @@ hostname = yunbusiness.ccb.com
 *****************************************/
 
 
-const cookieName = '建行生活签到'
+const cookieName = '建行生活'
 const signurlKey = 'photonmang_signurl_jhsh'
 const signheaderKey = 'photonmang_signheader_jhsh'
 const photonmang = init()
@@ -26,7 +26,7 @@ sign()  //签到
 
 function sign() {
   const url = { url: `https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040`, headers: JSON.parse(signheaderVal) }
-  url.body = '{}'
+  url.body = '{"ACT_ID":"20230628070000000001","MEB_ID":"YSM202307130878729","USR_TEL":"15705699953","REGION_CODE":"340200","chnlType":"1","regionCode":"340200"}'
   photonmang.post(url, (error, response, data) => {
     photonmang.log(`${cookieName}, data: ${data}`)
     const title = `${cookieName}`
