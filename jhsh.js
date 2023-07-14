@@ -19,14 +19,10 @@ const signheaderKey = 'photonmang_signheader_jhsh'
 const photonmang = init()
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
-
-
-sign()  //签到
-
-
+sign()
 function sign() {
   const url = { url: `https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040`, headers: JSON.parse(signheaderVal) }
-  url.body = '{}'
+  url.body = '{"ACT_ID":"20230628070000000001","MEB_ID":"YSM202307130878729","REGION_CODE":"340200","chnlType":"1","regionCode":"340200"}'
   photonmang.post(url, (error, response, data) => {
     photonmang.log(`${cookieName}, data: ${data}`)
     const title = `${cookieName}`
