@@ -1,8 +1,11 @@
 /**************************************
 作者:Zoo
-日期:2023.07.13
-cookie获取:建行生活注册登录 获取完关掉Cookie脚本
-
+日期:2023.07.14
+使用教程:
+1.复制Cookie脚本到重写
+2.复制[task_local]内容到本地
+3.圈x开抓包搜https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040，请求体内容全部复制到url.body='{复制到这个里面}' 然后保存到本地就可以了
+  
 [rewrite_local]
 ^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/jhshCookie.js
 
