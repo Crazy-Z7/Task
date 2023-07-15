@@ -28,7 +28,7 @@ function sign() {
   //请求体内容用文本查看，然后复制到下方括号里面，不要把文本里面的括号也复制了over!
     url.body = '{}'
   photonmang.post(url, (error, response, data) => {
-    $notify(`${cookieName}, data: ${data}`)
+    $notify(`${cookieName},${data}`)
     photonmang.done()
   })
 }
