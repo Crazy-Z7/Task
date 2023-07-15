@@ -28,24 +28,10 @@ function sign() {
   //请求体内容用文本查看，然后复制到下方括号里面，不要把文本里面的括号也复制了over!
     url.body = '{}'
   photonmang.post(url, (error, response, data) => {
-    photonmang.log(`${cookieName}, data: ${data}`)
-    const title = `${cookieName}`
-    let subTitle = ''
-    let detail = ''
-    const result = JSON.parse(data)
-    if (result.Code == 1) {
-      subTitle = `签到结果: 签到成功`
-      
-    } else if (result.Code == 0) {
-      subTitle = `签到结果: ${result.Message}`
-    } 
-    photonmang.msg(title, subTitle)
+    $notify(`${cookieName}, data: ${data}`)
     photonmang.done()
   })
 }
-
-
-
 function init() {
   isSurge = () => {
     return undefined === this.$httpClient ? false : true
