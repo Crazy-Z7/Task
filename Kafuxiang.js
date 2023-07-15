@@ -60,19 +60,12 @@ function sign() {
    const title = `${cookieName}`
     let subTitle = ''
     const result = JSON.parse(data)
-
-
     if (result.error_code == 30001) {
       subTitle = `签到结果: ${result.msg}`
-      
     } else  {
       subTitle = `签到结果: 签到成功！积分加1`
     } 
-
     photonmang.msg(title, subTitle,)
-    
-    
-
     photonmang.done()
   })
 }
