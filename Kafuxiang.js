@@ -21,6 +21,29 @@ hostname = fscrm.kraftheinz.net.cn
 
 
 
+/**************************************
+作者:Zoo
+日期:2023.07.13
+https://fscrm.kraftheinz.net.cn/?from=nkOpOelAJ2CGfXST4N3J9g==    复制链接到vx打开 然后关注公众号 右下角参谋福利/会员中心签到
+cookie获取脚本 签到的积分可兑换爱奇艺 腾讯视频会员 手机话费
+
+注意!!!:Cookie有效期7天，7天之后需要重新获取Cookie
+
+[rewrite_local]
+https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/getUserInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/KafuxiangCookie.js
+
+[task_local]
+30 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Kafuxiang.js, tag=卡夫享积分签到,enabled=true
+[MITM]
+hostname = fscrm.kraftheinz.net.cn
+*****************************************/
+
+
+
+
+
+
+
 
 const cookieName = '卡夫享'
 const signurlKey = 'photonmang_signurl_kfx'
@@ -33,18 +56,8 @@ function sign() {
   const url = { url: `https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/dailySign`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
   photonmang.post(url, (error, response, data) => {
-    photonmang.log(`${cookieName}, data: ${data}`)
-    const title = `${cookieName}`
-    let subTitle = ''
+    $notify(`卡夫享,${data}`)
     
-    const result = JSON.parse(data)
-    if (result.Code == 1) {
-      subTitle = `签到结果: 签到成功`
-      
-    } else if (result.Code == 0) {
-      subTitle = `签到结果: ${result.Message}`
-    } 
-    photonmang.msg(title, subTitle)
     photonmang.done()
   })
 }
@@ -91,4 +104,5 @@ function init() {
   }
   return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done }
 }
+
 
