@@ -61,7 +61,7 @@ function sign() {
     let subTitle = ''
     const result = JSON.parse(data)
     if (result.error_code == 30001) {
-      subTitle = `签到结果: ${result.msg}`
+      subTitle = `签到失败❌: ${result.msg}`
     } else  {
       subTitle = `签到结果: 签到成功！积分加1`
     } 
