@@ -45,6 +45,7 @@ hostname = fscrm.kraftheinz.net.cn
 
 
 
+
 const cookieName = '卡夫享'
 const signurlKey = 'photonmang_signurl_kfx'
 const signheaderKey = 'photonmang_signheader_kfx'
@@ -56,8 +57,22 @@ function sign() {
   const url = { url: `https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/dailySign`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
   photonmang.post(url, (error, response, data) => {
-    $notify(`${cookieName},${data}`)
+   const title = `${cookieName}`
+    let subTitle = ''
+    const result = JSON.parse(data)
+
+
+    if (result.error_code == 30001) {
+      subTitle = `签到结果: ${result.msg}`
+      
+    } else  {
+      subTitle = `签到结果: 签到成功！积分加1`
+    } 
+
+    photonmang.msg(title, subTitle,)
     
+    
+
     photonmang.done()
   })
 }
