@@ -28,7 +28,15 @@ function sign() {
   //请求体内容用文本查看，然后复制到下方括号里面，不要把文本里面的括号也复制了over!
     url.body = '{}'
   photonmang.post(url, (error, response, data) => {
-    $notify(`${cookieName},${data}`)
+   const title = `${cookieName}`
+  let subTitle = ''
+    const result = JSON.parse(data)
+    if (result.errCode == 0) {
+      subTitle = `签到结果: 签到成功`
+    } else  {
+      subTitle = `签到结果: ${result.errMsg}`
+    } 
+    photonmang.msg(title, subTitle,)
     photonmang.done()
   })
 }
