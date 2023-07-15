@@ -34,7 +34,7 @@ function sign() {
     if (result.errCode == 0) {
       subTitle = `签到结果: 签到成功`
     } else  {
-      subTitle = `签到结果: ${result.errMsg}`
+      subTitle = `签到失败❌: ${result.errMsg}`
     } 
     photonmang.msg(title, subTitle,)
     photonmang.done()
