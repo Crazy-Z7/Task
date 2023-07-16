@@ -27,7 +27,7 @@ function sign() {
     const result = JSON.parse(data)
     if (result.retcode == 0) {
       subTitle = `签到成功🎉: 获得${result.data.points}米游币`
-    } else if (result.retcode == -10001){
+    } else {
       subTitle = `签到失败❌:请检查`
     } 
     photonmang.msg(title, subTitle,)
