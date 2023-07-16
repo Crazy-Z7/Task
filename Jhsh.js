@@ -26,7 +26,7 @@ sign()
 function sign() {
   const url = { url: `https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040`, headers: JSON.parse(signheaderVal) }
   //请求体内容用文本查看，然后复制到下方括号里面，不要把文本里面的括号也复制了over!
-    url.body = '{}'
+    url.body = `{}`
   photonmang.post(url, (error, response, data) => {
    const title = `${cookieName}`
   let subTitle = ''
