@@ -3,11 +3,11 @@
 日期:2023.07.15
 cookie获取:米游社登录即可获取Cookie
 [rewrite_local]
-https://passport-api.mihoyo.com/account/auth/api/getCookieAccountInfoBySToken url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/MiyousheCookie.js
+https://bbs-api.miyoushe.com/apihub/app/api/signIn url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/MiyousheCookie.js
 [task_local]
 40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Miyoushe.js, tag=米游社米游币签到,enabled=true
 [MITM]
-hostname = passport-api.mihoyo.com
+hostname = bbs-api.miyoushe.com
 *****************************************/
 
 
