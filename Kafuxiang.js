@@ -24,7 +24,7 @@ const signheaderVal = photonmang.getdata(signheaderKey)
 sign()  
 function sign() {
   const url = { url: `https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/dailySign`, headers: JSON.parse(signheaderVal) }
-  url.body = '{}'
+  url.body = `{}`
   photonmang.post(url, (error, response, data) => {
    const title = `${cookieName}`
     let subTitle = ''
