@@ -1,7 +1,11 @@
 /**************************************
 作者:Zoo
-日期:2023.07.16
+日期:2023.07.17
 cookie获取:原神社区手动签到一次即可获取Cookie
+1.复制Cookie脚本到重写
+2.复制[task_local]内容到本地
+3.圈x开抓包手动签到一次，然后关闭抓包搜https://api-takumi.mihoyo.com/event/bbs_sign_reward/sign，把请求体文本查看，内容全部复制到url.body=`{复制到这个里面}` 然后保存到本地就可以了
+4.关闭Cookie脚本
 [rewrite_local]
 https://api-takumi.mihoyo.com/event/bbs_sign_reward/sign url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/MiyousheyuanshenCookie.js
 [task_local]
@@ -18,7 +22,7 @@ const signheaderVal = photonmang.getdata(signheaderKey)
 sign()  
 function sign() {
   const url = { url: `https://api-takumi.mihoyo.com/event/bbs_sign_reward/sign`, headers: JSON.parse(signheaderVal) }
-  url.body = ''
+  url.body = `{}`
   photonmang.post(url, (error, response, data) => {
    const title = `${cookieName}`
     let subTitle = ''
