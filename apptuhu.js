@@ -22,7 +22,7 @@ const signheaderVal = photonmang.getdata(signheaderKey)
 sign()
 function sign() {
   const url = { url: `https://api.tuhu.cn/User/UserCheckInVersion1`, headers: JSON.parse(signheaderVal) }
-  url.body = '{}'
+  url.body = `{}`
   photonmang.post(url, (error, response, data) => {
     photonmang.log(`${cookieName}, data: ${data}`)
     const title = `${cookieName}`
