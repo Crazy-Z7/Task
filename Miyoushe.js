@@ -20,7 +20,7 @@ const signheaderVal = photonmang.getdata(signheaderKey)
 sign()  
 function sign() {
   const url = { url: `https://bbs-api.miyoushe.com/apihub/app/api/signIn`, headers: JSON.parse(signheaderVal) }
-  url.body = '{"gids":5}'
+  url.body = `{"gids":5}`
   photonmang.post(url, (error, response, data) => {
    const title = `${cookieName}`
     let subTitle = ''
