@@ -24,9 +24,9 @@ function sign() {
     let subTitle = ''
     const result = JSON.parse(data)
     if (result.retcode == 0) {
-      subTitle = `签到成功🎉:$(result.message)`
+      subTitle = `签到成功🎉:${result.message}`
     } else  {
-      subTitle = `签到失败❌:$(result.message)`
+      subTitle = `签到失败❌:${result.message}`
     } 
     photonmang.msg(title, subTitle,)
     photonmang.done()
