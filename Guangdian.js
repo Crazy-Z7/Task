@@ -7,7 +7,7 @@ https://www.10099.com.cn/contact-web/api/busi/qryBalanceFee url script-request-h
 [task_local]
 30 7 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Guangdian.js, tag=中国广电套餐查询,enabled=true
 [MITM]
-hostname = app.10099.com.cn
+hostname = www.10099.com.cn
 *****************************************/
 const cookieName = '中国广电'
 const signurlKey = 'photonmang_signurl_gd'
