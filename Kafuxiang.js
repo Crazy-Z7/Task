@@ -31,7 +31,7 @@ function sign() {
     const result = JSON.parse(data)
     if (result.error_code == 30001) {
       subTitle = `签到失败❌: ${result.msg}`
-    } else if (result.error_code == 30000) {
+    } else  {
       subTitle = `签到结果: 签到成功！积分加1`
     } 
     photonmang.msg(title, subTitle,)
