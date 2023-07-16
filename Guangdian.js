@@ -3,7 +3,7 @@
 日期:2023.07.16
 cookie获取:中国广电登录即可获取Cookie
 [rewrite_local]
-https://app.10099.com.cn/contact-web/api/busi/qryUserInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/GuangdianCookie.js
+https://www.10099.com.cn/contact-web/api/busi/qryBalanceFee url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/GuangdianCookie.js
 [task_local]
 30 7 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Guangdian.js, tag=中国广电套餐查询,enabled=true
 [MITM]
