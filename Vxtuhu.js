@@ -23,7 +23,7 @@ const signheaderVal = photonmang.getdata(signheaderKey)
 sign() 
 function sign() {
   const url = { url: `https://api.tuhu.cn/user/UserCheckInVersion1?channel=wxapp`, headers: JSON.parse(signheaderVal) }
-  url.body = '{}'
+  url.body = `{}`
   photonmang.post(url, (error, response, data) => {
     photonmang.log(`${cookieName}, data: ${data}`)
     const title = `${cookieName}`
