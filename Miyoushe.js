@@ -1,7 +1,7 @@
 /**************************************
 作者:Zoo
 日期:2023.07.15
-cookie获取:米游社登录即可获取Cookie
+cookie获取:米游社登录手动签到一次即可获取Cookie
 [rewrite_local]
 https://bbs-api.miyoushe.com/apihub/app/api/signIn url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/MiyousheCookie.js
 [task_local]
