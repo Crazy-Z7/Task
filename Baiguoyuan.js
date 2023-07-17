@@ -3,11 +3,11 @@
 日期:2023.07.17
 cookie获取:百果园登录即可获取Cookie
 [rewrite_local]
-https://eshop-api-customer.eshop.prod.pagoda.com.cn/api/v1/customer/info/.+ url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/BaiguoyuanCookie.js
+https://h5-api.pagoda.com.cn/api/signIn/sign url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/BaiguoyuanCookie.js
 [task_local]
 45 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Baiguoyuan.js, tag=百果园积分签到,enabled=true
 [MITM]
-hostname = eshop-api-customer.eshop.prod.pagoda.com.cn
+hostname = h5-api.pagoda.com.cn
 *****************************************/
 const cookieName = '百果园'
 const signurlKey = 'photonmang_signurl_baiguoyuan'
