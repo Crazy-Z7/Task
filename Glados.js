@@ -1,6 +1,8 @@
 /**************************************
 作者:Zoo
 日期:2023.07.20
+Cookie获取：需手动签到获取一次
+注册网址：https://glados.rocks
 [rewrite_local]
 https://glados.rocks/api/user/checkin url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Glados.js
 [task_local]
