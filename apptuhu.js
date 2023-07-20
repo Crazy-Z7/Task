@@ -18,7 +18,7 @@ const signheaderKey = 'photonmang_signheader_tuhuapp'
 const photonmang = Env()
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
-sign()
+sign() 
 function sign() {
   const url = { url: `https://api.tuhu.cn/User/UserCheckInVersion1`, headers: JSON.parse(signheaderVal) }
   url.body = `{}`
@@ -38,6 +38,7 @@ function sign() {
     photonmang.msg(title, subTitle, detail)
     photonmang.done()
   })
+}
 if ($request && $request.method != 'OPTIONS') {
   const signurlVal = $request.url
   const signheaderVal = JSON.stringify($request.headers)
