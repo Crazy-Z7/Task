@@ -27,7 +27,7 @@ function sign() {
     if (result.code == 0) {
       subTitle = `签到成功🎉:${result.message}`
     } else  {
-      subTitle = `签到失败❌:请勿重复签到`
+      subTitle = `签到失败❌:${result.message}`
     } 
     photonmang.msg(title, subTitle)
     photonmang.done()
