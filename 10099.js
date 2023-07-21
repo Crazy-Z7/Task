@@ -41,9 +41,12 @@ function sign() {
 }
 if ($request && $request.method != 'OPTIONS') {
   const signurlVal = $request.url
+  const signbodyVal = $request.body
   const signheaderVal = JSON.stringify($request.headers)
   if (signurlVal) photonmang.setdata(signurlVal, signurlKey)
-  if (signheaderVal) photonmang.setdata(signheaderVal, signheaderKey)
+  if (signheaderVal) photonmang.setdata(signheaderVal, signheaderKey,signbodyVal)
+  if (signbodyVal)
+  photonmang.setdata(signheaderVal, signheaderKey,signbodyVal)
   photonmang.msg(cookieName, `获取Cookie: 成功🎉`, ``)
 }
 // prettier-ignore
