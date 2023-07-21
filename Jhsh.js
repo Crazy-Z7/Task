@@ -10,7 +10,7 @@
 ^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js
 
 [task_local]
-40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js, tag=建行生活积分签到,enabled=true
+40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js, img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0910.jpeg, enabled=true
 [MITM]
 hostname = yunbusiness.ccb.com
 *****************************************/
