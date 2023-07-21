@@ -33,7 +33,7 @@ function sign() {
     } else  {
       subTitle = `查询结果:${result.respDesc}`
     } 
-    photonmang.msg(title, subTitle)
+    photonmang.msg(title, subTitle,detail)
     photonmang.done()
   })
 }
