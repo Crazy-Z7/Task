@@ -8,7 +8,7 @@ cookie获取:打开途虎app登录点击我的页面，获取完记得关闭重�
 https://api.tuhu.cn/User/ValidLogin url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhu.js
 
 [task_local]
-40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhu.js, tag=途虎app积分签到,enabled=true
+41 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhu.js, tag=途虎app积分签到, img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0905.jpeg, enabled=true
 [MITM]
 hostname = api.tuhu.cn
 *****************************************/
