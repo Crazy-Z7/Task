@@ -5,7 +5,7 @@ Cookie获取：小程序登陆中国广电获取
 [rewrite_local]
 https://wx.10099.com.cn/contact-web/api/busi/qryUserInfo url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/10099.js
 [task_local]
-20 7 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/10099.js, tag=10099话费流量查询,enabled=true
+20 7 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/10099.js, tag=中国广电套餐查询,enabled=true
 [MITM]
 hostname = wx.10099.com.cn
 *****************************************/
