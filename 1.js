@@ -9,9 +9,9 @@ https://wx.10099.com.cn/contact-web/api/busi/qryUserInfo url script-request-head
 [MITM]
 hostname = wx.10099.com.cn
 *****************************************/
-const cookieName = "10099"
-const signurlKey = 'photonmang_signurl_10099'
-const signheaderKey = 'photonmang_signheader_10099'
+const cookieName = "中国广电"
+const signurlKey = 'photonmang_signurl_guangdian'
+const signheaderKey = 'photonmang_signheader_guangdian'
 const photonmang = Env()
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
