@@ -15,28 +15,7 @@ const signheaderKey = 'photonmang_signheader_guangdian'
 const photonmang = Env()
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
-sign()  
-function sign() {
-  const url = { url: `https://wx.10099.com.cn/contact-web/api/busi/qryUserInfo`, headers: JSON.parse(signheaderVal) }
-  url.body = ``
-  photonmang.post(url, (error, response, data) => {
-   const title = `${cookieName}`
-    let subTitle = ''
-    let detail = ''
-    const result = JSON.parse(data)
-    if (result.respCode == 000000) {
-      subTitle = `查询结果:${result.respDesc}`
-      detail += `套餐名称:${result.packName}`
-     detail += `话费剩余:${result.fee}元`
-   detail += `语音剩余:${result.voice}分钟`
-  detail += `流量剩余:${result.flow}GB`
-    } else  {
-      subTitle = `查询结果:${result.respDesc}`
-    } 
-    photonmang.msg(title, subTitle,detail)
-    photonmang.done()
-  })
-}
+
 if ($request && $request.method != 'OPTIONS') {
   const signurlVal = $request.url
   const signheaderVal = JSON.stringify($request.headers)
