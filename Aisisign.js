@@ -12,7 +12,7 @@ hostname = usercenter2.i4.cn
 const cookieName = '爱思助手'
 const signurlKey = 'photonmang_signurl_aisi'
 const signheaderKey = 'photonmang_signheader_aisi'
-const photonmang = Env()
+const photonmang = Env('爱思助手')
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
 
