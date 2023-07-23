@@ -15,7 +15,7 @@ hostname = api.tuhu.cn
 const cookieName = '途虎vx'
 const signurlKey = 'photonmang_signurl_tuhuvx'
 const signheaderKey = 'photonmang_signheader_tuhuvx'
-const photonmang = Env()
+const photonmang = Env('途虎vx')
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
 sign() 
