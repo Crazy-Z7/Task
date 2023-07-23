@@ -3,7 +3,7 @@
 日期:2023.07.23
 Cookie获取：爱思助手全能版手动签到获取一次
 [rewrite_local]
-https://usercenter2.i4.cn/getSignInPageInfo.xhtml url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/AisiCookie.js
+https://usercenter2.i4.cn/saveMemberSign.xhtml url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/AisiCookie.js
 [task_local]
 40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Aisising.js, tag=爱思助手全能版签到,enabled=true
 [MITM]
