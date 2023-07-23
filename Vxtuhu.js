@@ -5,7 +5,7 @@
 cookie获取:公众号搜索途虎小程序登录
 
 [rewrite_local]
-https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Vxtuhu.js
+https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/VxtuhuCookie.js
 
 [task_local]
 40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Vxtuhu.js, tag=途虎小程序积分签到,enabled=true
