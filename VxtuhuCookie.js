@@ -2,7 +2,7 @@
 const cookieName = '途虎vx'
 const signurlKey = 'photonmang_signurl_tuhuvx'
 const signheaderKey = 'photonmang_signheader_tuhuvx'
-const photonmang = Env('途虎vx')
+const photonmang = Env('途虎vxCookie')
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
 if ($request && $request.method != 'OPTIONS') {
