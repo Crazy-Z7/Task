@@ -2,7 +2,7 @@
 const cookieName = '途虎app'
 const signurlKey = 'photonmang_signurl_tuhuapp'
 const signheaderKey = 'photonmang_signheader_tuhuapp'
-const photonmang = Env()
+const photonmang = Env('途虎app')
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
 
