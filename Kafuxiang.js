@@ -7,7 +7,7 @@ cookie获取脚本 签到的积分可兑换爱奇艺 腾讯视频会员 手机�
 注意!!!:Cookie有效期7天，7天之后需要重新获取Cookie
 
 [rewrite_local]
-https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/getUserInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Kafuxiang.js
+https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/getUserInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/KfxCookie.js
 
 [task_local]
 30 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Kafuxiang.js, tag=卡夫享积分签到, img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0909.jpeg, enabled=true
