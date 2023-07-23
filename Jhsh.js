@@ -17,7 +17,7 @@ hostname = yunbusiness.ccb.com
 const cookieName = '建行生活'
 const signurlKey = 'photonmang_signurl_jhsh'
 const signheaderKey = 'photonmang_signheader_jhsh'
-const photonmang = Env()
+const photonmang = Env('建行生活')
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
 sign()
