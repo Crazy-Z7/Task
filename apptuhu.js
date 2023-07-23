@@ -5,7 +5,7 @@ cookie获取:打开途虎app登录点击我的页面，获取完记得关闭重�
 来自张军的建议:如果出现，您暂时无法签到这个问题,就删除QX和途虎app.重新安装即可解决问题.原因未知.
 
 [rewrite_local]
-https://api.tuhu.cn/User/ValidLogin url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhu.js
+https://api.tuhu.cn/User/ValidLogin url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/THappCookie.js
 
 [task_local]
 41 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhu.js, tag=途虎app积分签到, img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0905.jpeg, enabled=true
