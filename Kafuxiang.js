@@ -17,7 +17,7 @@ hostname = fscrm.kraftheinz.net.cn
 const cookieName = '卡夫享'
 const signurlKey = 'photonmang_signurl_kfx'
 const signheaderKey = 'photonmang_signheader_kfx'
-const photonmang = Env()
+const photonmang = Env('卡夫享')
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
 sign()  
