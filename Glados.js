@@ -13,7 +13,7 @@ hostname = glados.rocks
 const cookieName = "Glados"
 const signurlKey = 'photonmang_signurl_glados'
 const signheaderKey = 'photonmang_signheader_glados'
-const photonmang = Env('Glados')
+const photonmang = Env('GladosCookie')
 const signurlVal = photonmang.getdata(signurlKey)
 const signheaderVal = photonmang.getdata(signheaderKey)
 sign()  
