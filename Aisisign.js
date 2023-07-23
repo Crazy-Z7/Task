@@ -32,7 +32,7 @@ function sign() {
       detail += `已连续签到:${result.type}`+`/7天`
       detail += `积分总数:${result.totalscore}`+`\n`
     } else  {
-      subTitle = `签到结果: ${result.签到失败}`
+      subTitle = `签到结果: 签到失败`
     } 
     photonmang.msg(title, subTitle, detail)
     photonmang.done()
