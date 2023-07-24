@@ -2,10 +2,11 @@
 作者:Zoo
 日期:2023.07.23
 Cookie获取：爱思助手全能版手动签到获取一次
+           url.body里面填入你抓包的请求体所有的内容保存到本地
 [rewrite_local]
 https://usercenter2.i4.cn/saveMemberSign.xhtml url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/AisiCookie.js
 [task_local]
-40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Aisising.js, tag=爱思助手全能版签到,enabled=true
+40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Aisising.js, tag=爱思助手全能版签到,img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0917.jpeg,enabled=true
 [MITM]
 hostname = usercenter2.i4.cn
 *****************************************/
