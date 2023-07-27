@@ -29,9 +29,8 @@ function sign() {
     const result = JSON.parse(data)
     if (result.code == 0) {
       subTitle = `签到结果: 签到成功`
-      detail += `积分增加:${result.data.score}\n`
-      detail += `积分总数:${result.data.totalscore}\n`
-      detail += `签到天数:${result.data.type}天`
+      detail += `积分增加:${result.data.score}分\n`
+      detail += `积分总数:${result.data.totalscore}分\n`
     } else  {
       subTitle = `签到结果: 签到失败`
     } 
