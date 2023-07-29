@@ -91,7 +91,7 @@ async function key() {
 async function sign() {
 
 	obj=$.signBody;
-    if (obj.indexOf("zoo") !=-1) {
+    if (obj.indexOf("error_code") !=30001) {
      
      const body = JSON.parse($.signBody);
      $.subt = '重复签到';
