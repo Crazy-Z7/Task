@@ -4,8 +4,6 @@
 https://fscrm.kraftheinz.net.cn/?from=nkOpOelAJ2CGfXST4N3J9g==    复制链接到vx打开 然后关注公众号 右下角参谋福利/会员中心签到
 cookie获取脚本 签到的积分可兑换爱奇艺 腾讯视频会员 手机话费
 
-注意!!!:Cookie有效期7天，7天之后需要重新获取Cookie
-
 [rewrite_local]
 https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/getUserInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Kafuxiang.js
 
