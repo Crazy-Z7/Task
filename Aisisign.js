@@ -4,7 +4,7 @@
 Cookie获取：爱思助手全能版手动签到获取
           
 [rewrite_local]
-https://usercenter2.i4.cn/saveMemberSign.xhtml url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Aisising.js
+https://usercenter2.i4.cn/saveMemberSign.xhtml url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Aisisign.js
 [task_local]
 40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Aisising.js, tag=爱思助手全能版签到,img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0917.jpeg,enabled=true
 [MITM]
