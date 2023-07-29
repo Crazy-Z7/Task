@@ -63,9 +63,6 @@ async function key() {
 'mbc_user_info': signheaders['mbc_user_info'],
 'Accept-Encoding': 'gzip,compress,br,deflate',
 'User-Agent': signheaders['User-Agent'],
-'skey': 'fiNQOl',
-'Sec-Fetch-Dest': 'empty',
-
       
     },
     body: signbody
