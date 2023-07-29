@@ -12,7 +12,7 @@ hostname = yunbusiness.ccb.com
 *****************************************/
 const $ = new Env('建行生活')
 $.KEY_sign = 'jhsh'
-$.signKeyJHSH = 'tclx_usersignKeyJHSH'
+$.signKeyJHSH = 'jhsh_usersignKeyJHSH'
 
 let isGetCookie = typeof $request !== 'undefined'
 
