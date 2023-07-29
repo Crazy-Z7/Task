@@ -71,7 +71,7 @@ async function key() {
         console.log(data);
 
         $.signBody = data
-        signStatus = resp.code
+            Status = resp.code
 
       } catch (e) {
         $.logErr(e, resp)
@@ -91,7 +91,7 @@ async function sign() {
      const body = JSON.parse($.signBody);
      $.subt = '重复签到';
     }
-    else if (signStatus == '0'){
+    else if (Status == '0'){
     	
 		const body = JSON.parse($.signBody);
 		$.subt = '签到成功';
