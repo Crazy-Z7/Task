@@ -62,7 +62,7 @@ async function key() {
 'api_level': '2',
 'Authorization': signheaders['Authorization'],
 'distinct_id': signheaders['distinct_id'],
-'blackbox': signheaders['User-Agent'],
+'blackbox': signheaders['blackbox'],
 'Accept-Encoding': 'gzip,compress,br,deflate',
 'User-Agent': signheaders['User-Agent'],
 
