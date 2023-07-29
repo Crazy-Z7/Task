@@ -62,7 +62,7 @@ async function key() {
 'currentPage': 'memberMallPackage/pages/memberMall/memberTask',
 'Authorization': signheaders['Authorization'],
 'distinct_id': signheaders['distinct_id'],
-'blackbox': signheaders['User-Agent'],
+'blackbox': signheaders['blackbox'],
 'Accept-Encoding': 'gzip,compress,br,deflate',
 'User-Agent': signheaders['User-Agent'],
 'Referer': 'https://servicewechat.com/wx27d20205249c56a3/745/page-frame.html',
