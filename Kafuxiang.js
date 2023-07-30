@@ -13,8 +13,8 @@ https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/getUserInfo url scri
 hostname = fscrm.kraftheinz.net.cn
 *****************************************/
 const $ = new Env('卡夫享')
-$.KEY_sign = 'kfx'
-$.signKeyKFX = 'kfx_usersignKeyKFX'
+$.KEY_sign = 'FFX'
+$.signKeyKFX = 'KFX_usersignKeyKFX'
 
 let isGetCookie = typeof $request !== 'undefined'
 
