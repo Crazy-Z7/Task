@@ -61,18 +61,13 @@ async function key() {
 'Accept-Encoding': 'gzip, deflate, br',
 'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
 'Referer': 'https://fscrm.kraftheinz.net.cn/?code=091cJI100HV6pQ1e6d400oL3Bo4cJI1K&state=&appid=wx65da983ae179e97b',
-'Sec-Fetch-Dest': 'empty'
-
-      
+'Sec-Fetch-Dest': 'empty',     
     },
     body: signbody
-  }
-   
+  }  
     $.post$.post(url,(err, resp, data)=> {    
       try {
-        $.msg($.name,data);
-            
-
+        $.msg($.name,data);            
       } catch (e) {
         $.logErr(e, resp)
       } finally {
