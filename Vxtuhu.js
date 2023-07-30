@@ -14,7 +14,7 @@ hostname = api.tuhu.cn
 *****************************************/
 const $ = new Env('途虎vx')
 $.KEY_sign = 'tuhuvx'
-$.signKeyTCLX = 'tclx_usersignKeyTCLX'
+$.signKeyTU = 'TU_usersignKeyTU'
 
 let isGetCookie = typeof $request !== 'undefined'
 
@@ -25,7 +25,7 @@ if (isGetCookie) {
     session.body = $request.body;
     session.headers = $request.headers;
     console.log(JSON.stringify(session));
-    if ($.setdata(JSON.stringify(session), $.signKeyTCLX)) {
+    if ($.setdata(JSON.stringify(session), $.signKeyTU)) {
       $.subt = `获取会话: 成功!`
     } else {
       $.subt = `获取会话: 失败!`
@@ -45,10 +45,10 @@ if (isGetCookie) {
 async function key() {
   return new Promise((resolve) => {
   
-    signbody    = JSON.parse($.getdata($.signKeyTCLX)).body;
-    signheaders = JSON.parse($.getdata($.signKeyTCLX)).headers;
+    signbody    = JSON.parse($.getdata($.signKeyTU)).body;
+    signheaders = JSON.parse($.getdata($.signKeyTU)).headers;
 
-    url_t = JSON.parse($.getdata($.signKeyTCLX)).url;
+    url_t = JSON.parse($.getdata($.signKeyTU)).url;
     const url = { 
        url: 'https://api.tuhu.cn/user/UserCheckInVersion1?channel=wxapp', 
     headers: {
