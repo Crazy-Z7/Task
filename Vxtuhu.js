@@ -68,20 +68,9 @@ async function key() {
     },
     body: signbody
   }
-   
-    $.post(url,(err, resp, data)=> {    
+   $.post(url,(err, resp, data)=> {    
       try {
-        console.log(data);
-
-        $.signBody = data
-            Status = resp.Code
-
-      } catch (e) {
-        $.logErr(  $.post(url,(err, resp, data)=> {    
-      try {
-        $.msg($.name,data);
-            
-
+        $.msg($.name,data);            
       } catch (e) {
         $.logErr(e, resp)
       } finally {
