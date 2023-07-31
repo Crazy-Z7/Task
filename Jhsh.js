@@ -1,7 +1,7 @@
 /**************************************
 作者:Zoo
-日期:2023.07.16
-使用教程:
+日期:2023.07.31
+使用教程:登陆手动签到一次获取body即可
 [rewrite_local]
 ^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js
 
