@@ -53,25 +53,25 @@ async function key() {
     const url = { 
        url: 'https://api.tuhu.cn/User/UserCheckInVersion1', 
     headers: {
-    'Host': 'api.tuhu.cn',
+'Host': 'api.tuhu.cn',
+'fingerprint':'', 
 'version': 'iOS 6.53.5',
-'fingerprint': '',
-'Connection': 'keep-alive',
+'distinct_id': signheaders['distinct_id'],
+'Authorization': signheaders['Authorization'],
 'Accept': '*/*',
 'car': signheaders['car'],
-'mid':signheaders['mid'],
 'api_level': '2',
-'DeviceID': signheaders['DeviceID'],
-'Authorization': signheaders['Authorization'],
-'distinct_id': signheaders['distinct_id'],
-'blackbox': signheaders['blackbox'],
-'Accept-Encoding': 'gzip, deflate, br',
-'User-Agent': 'Tuhu/6.53.5 (iPhone; iOS 16.6; Scale/3.0)', 
 'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
 'needErrorCode': 'true',
+'Accept-Encoding': 'gzip, deflate, br',
+'mid': signheaders['mid'],
+'DeviceID': signheaders['DeviceID'],
+'User-Agent': 'Tuhu/6.53.5 (iPhone; iOS 16.6; Scale/3.0)',
+'Connection': 'keep-alive',
+'blackbox': signheaders['blackbox'],
    
     },
-    body: signbody
+    body: ''
   }  
     $.post(url,(err, resp, data)=> {    
       try {
