@@ -54,16 +54,22 @@ async function key() {
        url: 'https://api.tuhu.cn/User/UserCheckInVersion1', 
     headers: {
     'Host': 'api.tuhu.cn',
+'version': 'iOS 6.53.5',
+'fingerprint': '',
 'Connection': 'keep-alive',
-'content-type': 'application/json',
+'Accept': '*/*',
 'car': signheaders['car'],
 'mid':signheaders['mid'],
 'api_level': '2',
+'DeviceID': signheaders['DeviceID'],
 'Authorization': signheaders['Authorization'],
 'distinct_id': signheaders['distinct_id'],
 'blackbox': signheaders['blackbox'],
-'Accept-Encoding': 'gzip,compress,br,deflate',
-'User-Agent': signheaders['User-Agent'],      
+'Accept-Encoding': 'gzip, deflate, br',
+'User-Agent': 'Tuhu/6.53.5 (iPhone; iOS 16.6; Scale/3.0)', 
+'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
+'needErrorCode': 'true',
+   
     },
     body: signbody
   }  
