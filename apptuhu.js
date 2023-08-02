@@ -1,6 +1,6 @@
 /**************************************
 作者:Zoo
-日期:2023.07.18
+日期:2023.08.02
 cookie获取:打开途虎app登录点击我的页面，获取完记得关闭重写
 来自张军的建议:如果出现，您暂时无法签到这个问题,就删除QX和途虎app.重新安装即可解决问题.原因未知.
 
@@ -53,22 +53,22 @@ async function key() {
     const url = { 
        url: 'https://api.tuhu.cn/User/UserCheckInVersion1', 
     headers: {
-'Host': 'api.tuhu.cn',
-'fingerprint':'', 
-'version': 'iOS 6.53.5',
-'distinct_id': signheaders['distinct_id'],
-'Authorization': signheaders['Authorization'],
-'Accept': '*/*',
-'car': signheaders['car'],
-'api_level': '2',
-'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
-'needErrorCode': 'true',
-'Accept-Encoding': 'gzip, deflate, br',
-'mid': signheaders['mid'],
-'DeviceID': signheaders['DeviceID'],
-'User-Agent': 'Tuhu/6.53.5 (iPhone; iOS 16.6; Scale/3.0)',
-'Connection': 'keep-alive',
-'blackbox': signheaders['blackbox'],
+'fingerprint' : ``,
+'distinct_id' : signheaders['distinct_id'],
+'Accept-Encoding' : `gzip, deflate, br`,
+'version' : `iOS 6.53.5`,
+'mid' : signheaders['mid'],
+'Connection' : `keep-alive`,
+'car' : signheaders['car'],
+'api_level' : `2`,
+'User-Agent' : `Tuhu/6.53.5 (iPhone; iOS 16.6; Scale/3.0)`,
+'Authorization' : signheaders['Authorization'],
+'DeviceID' : signheaders['DeviceID'],
+'Host' : `api.tuhu.cn`,
+'black_box' : signheaders['black_box'],
+'Accept-Language' : `zh-CN,zh-Hans;q=0.9`,
+'Accept' : `*/*`,
+'needErrorCode' : `true`,
    
     },
     body: ''
