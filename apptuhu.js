@@ -2,7 +2,6 @@
 作者:Zoo
 日期:2023.08.02
 cookie获取:打开途虎app登录点击我的页面，获取完记得关闭重写
-建议:如果出现，您暂时无法签到这个问题,qx开抓包，进途虎app手动签到一次，在用脚本签到
 
 [rewrite_local]
 https://api.tuhu.cn/User/ValidLogin url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/apptuhu.js
