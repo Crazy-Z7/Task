@@ -23,7 +23,7 @@ if (isGetCookie) {
     session.body = $request.body;
     session.headers = $request.headers;
     console.log(JSON.stringify(session));
-    if ($.setdata(JSON.stringify(session), $.signKeyAISI2)) {
+    if ($.setdata(JSON.stringify(session), $.signKeyGD)) {
       $.subt = `获取会话: 成功!`
     } else {
       $.subt = `获取会话: 失败!`
