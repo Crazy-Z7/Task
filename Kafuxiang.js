@@ -67,7 +67,7 @@ async function key() {
   }  
     $.post(url,(err, resp, data)=> {    
       try {
-        $.msg($.name,data);            
+    $.msg($.name, JSON.parse(data).msg);           
       } catch (e) {
         $.logErr(e, resp)
       } finally {
