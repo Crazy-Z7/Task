@@ -84,7 +84,7 @@ async function key() {
           sub = `签到结果: ${res.Message}`
         }    
           try {
-            $.msg($.name,sub);            
+            $.msg($.name,sub,det);            
           } catch (e) {
             $.logErr(e, resp)
           } finally {
