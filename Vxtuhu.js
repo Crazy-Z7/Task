@@ -68,7 +68,7 @@ async function key() {
     },
     body: signbody
   }
-   $.post$.post(url,(err, resp, data)=> {   
+   $.post(url,(err, resp, data)=> {   
      let res = JSON.parse(data);
      let sub = ''
      let det = ''
