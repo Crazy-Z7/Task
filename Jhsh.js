@@ -77,8 +77,7 @@ async function key() {
      let sub = ''
      let det = ''
         if (res.errCode == 0) {
-          sub = `签到结果: 签到成功`        
-          det += `签到天数: 已签到第${res.data.SIGN_REQ}天`      
+          sub = `签到结果: 签到成功`              
         } else  {
           sub = `签到结果: ${res.errMsg}`
         }    
