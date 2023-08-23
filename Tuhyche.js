@@ -3,7 +3,7 @@
 作者:Zoo
 日期:2023.08.23
 整合途虎养车app小程序积分签到
-cookie获取:公众号搜索途虎小程序登录即可同时签到app和小程序
+cookie获取:公众号搜索途虎小程序登录即可获取，可同时签到app和小程序
 [rewrite_local]
 https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
 
