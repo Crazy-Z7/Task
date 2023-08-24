@@ -5,7 +5,7 @@
 如有需求请使用原作者脚本 https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/sgs.js
 Cookie获取：申公社登陆可获取     
 [rewrite_local]
-https://fwdt.shengongshe.org/sgsWchartApi/api/My/myIntegral url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js
+https://fwdt.shengongshe.org/sgsWchartApi/api/My/myIntegral url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js
 [task_local]
 40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js, tag=申公社每日签到阅读任务,img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_1149.jpeg,enabled=true
 [MITM]
