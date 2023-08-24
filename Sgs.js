@@ -7,7 +7,7 @@ Cookie获取：申工社登陆可获取
 [rewrite_local]
 https://fwdt.shengongshe.org/sgsWchartApi/api/My/myIntegral url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js
 [task_local]
-40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js, tag=申公社每日签到阅读任务,img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_1149.jpeg,enabled=true
+40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js, tag=申工社每日签到阅读任务,img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_1149.jpeg,enabled=true
 [MITM]
 hostname = fwdt.shengongshe.org
 *****************************************/
