@@ -92,7 +92,7 @@ async function read() {
 'Token' : signheaders['Token'],
     
     },
-    body: `media_id=3602,media_id=3603,media_id=3601`
+    body: `media_id=3607,media_id=3606,media_id=3605`
   }  
 $.post(url,(err, resp, data)=> {   
      let res = JSON.parse(data);
