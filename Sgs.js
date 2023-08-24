@@ -3,7 +3,7 @@
 日期:2023.08.24
 原作者@Sliverkiss
 如有需求请使用原作者脚本 https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/sgs.js
-Cookie获取：申公社登陆可获取     
+Cookie获取：申工社登陆可获取     
 [rewrite_local]
 https://fwdt.shengongshe.org/sgsWchartApi/api/My/myIntegral url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js
 [task_local]
@@ -11,7 +11,7 @@ https://fwdt.shengongshe.org/sgsWchartApi/api/My/myIntegral url script-request-b
 [MITM]
 hostname = fwdt.shengongshe.org
 *****************************************/
-const $ = new Env('申公社')
+const $ = new Env('申工社')
 $.KEY_sign = 'sgs'
 $.signKeysgs = 'sgs_usersignKeysgs'
 
