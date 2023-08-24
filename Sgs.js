@@ -1,6 +1,7 @@
 /**************************************
 作者:Zoo
 日期:2023.08.24
+纯自用
 原作者@Sliverkiss
 如有需求请使用原作者脚本 https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/sgs.js
 [rewrite_local]
