@@ -77,7 +77,8 @@ async function key() {
      let sub = ''
      let det = ''
         if (res.errCode == 0) {
-          sub = `签到结果: 签到成功`              
+          sub = `签到结果: 签到成功`        
+          det += `距离领奖天数: ${res.data.NEST_AWARD_DAY}天`      
         } else  {
           sub = `签到结果: ${res.errMsg}`
         }    
