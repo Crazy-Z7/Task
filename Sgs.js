@@ -1,17 +1,17 @@
 /**************************************
 作者:Zoo
 日期:2023.08.24
-纯自用
 原作者@Sliverkiss
 如有需求请使用原作者脚本 https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/sgs.js
+Cookie获取：申公社登陆可获取     
 [rewrite_local]
 https://fwdt.shengongshe.org/sgsWchartApi/api/My/myIntegral url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js
 [task_local]
-40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js, tag=申工社每日签到阅读任务,img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_1149.jpeg,enabled=true
+40 9 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Sgs.js, tag=申公社每日签到阅读任务,img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_1149.jpeg,enabled=true
 [MITM]
 hostname = fwdt.shengongshe.org
 *****************************************/
-const $ = new Env('申工社')
+const $ = new Env('申公社')
 $.KEY_sign = 'sgs'
 $.signKeysgs = 'sgs_usersignKeysgs'
 
@@ -38,6 +38,14 @@ if (isGetCookie) {
     await sign();
     await $.wait(1000 * 2);
     await read(); 
+    await $.wait(1000 * 1);
+    await read1();
+    await $.wait(1000 * 1);
+    await read2(); 
+    await $.wait(1000 * 1);
+    await read3(); 
+    await $.wait(1000 * 1);
+    await read4(); 
     await $.wait(1000 * 1);
     await point(); 
    
@@ -113,6 +121,102 @@ $.post(url,(err, resp, data)=> {
         })
       })
     }
+async function read1() {
+  return new Promise((resolve) => {  
+    const url = { 
+       url: `https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MjM5ODMxNzE2NQ==&action=getalbum&album_id=2605164409120030721#wechat_redirect`, 
+    headers: {
+'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.40(0x18002830) NetType/WIFI Language/zh_CN`,
+'Host' : `mp.weixin.qq.com`,
+'Token' : signheaders['Token'],
+    
+    },
+    body: ``
+  }  
+$.post(url,(err, resp, data)=> {   
+     try {
+        console.log(data);
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+async function read2() {
+  return new Promise((resolve) => {  
+    const url = { 
+       url: `https://fwdt.shengongshe.org/sgs_wchart/index.php?s=/w20/QrcodeForServiceHall/QrcodeForServiceHall/qrcodeUrl/id/2/module/1.html&publicid=20`, 
+    headers: {
+'Origin' : `https://fwdt.shengongshe.org`,
+'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.40(0x18002830) NetType/WIFI Language/zh_CN`,
+'Host' : `fwdt.shengongshe.org`,
+'Token' : signheaders['Token'],
+    
+    },
+    body: ``
+  }  
+$.post(url,(err, resp, data)=> {   
+     try {
+        console.log(data);
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+async function read3() {
+  return new Promise((resolve) => {  
+    const url = { 
+       url: `https://fwdt.shengongshe.org/sgs_wchart/index.php?s=/w20/QrcodeForServiceHall/QrcodeForServiceHall/qrcodeUrl/id/15/model/qrcode_for_service_hall.html&publicid=20`, 
+    headers: {
+'Origin' : `https://fwdt.shengongshe.org`,
+'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.40(0x18002830) NetType/WIFI Language/zh_CN`,
+'Host' : `fwdt.shengongshe.org`,
+'Token' : signheaders['Token'],
+    
+    },
+    body: ``
+  }  
+$.post(url,(err, resp, data)=> {   
+     try {
+        console.log(data);
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
+
+async function read4() {
+  return new Promise((resolve) => {  
+    const url = { 
+       url: `https://fwdt.shengongshe.org/Web/lvxing/index.html#/`, 
+    headers: {
+'Origin' : `https://fwdt.shengongshe.org`,
+'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.40(0x18002830) NetType/WIFI Language/zh_CN`,
+'Host' : `fwdt.shengongshe.org`,
+'Token' : signheaders['Token'],
+    
+    },
+    body: ``
+  }  
+$.post(url,(err, resp, data)=> {   
+    try {
+        console.log(data);
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
 async function point() {
   return new Promise((resolve) => {  
     const url = { 
