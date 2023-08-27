@@ -51,7 +51,6 @@ async function sign() {
     const url = { 
        url: `https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/dailySign`, 
     headers: {
-'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.40(0x18002830) NetType/WIFI Language/zh_CN`,
 'token' : signheaders['token'],
     },
     body: ``
