@@ -1,6 +1,6 @@
 /**************************************
 作者:Zoo
-日期:2023.07.29
+日期:2023.08.27
 https://fscrm.kraftheinz.net.cn/?from=nkOpOelAJ2CGfXST4N3J9g==    复制链接到vx打开 然后关注公众号 右下角参谋福利/会员中心签到
 cookie获取脚本 签到的积分可兑换爱奇艺 腾讯视频会员 手机话费
 
@@ -37,6 +37,7 @@ if (isGetCookie) {
 } else {
  !(async () => {
     await sign();
+    await token();
     
   })()
   .catch((e) => $.logErr(e))
@@ -79,6 +80,53 @@ $.post(url,(err, resp, data)=> {
           sub = `签到结果: ${res.msg}`            
         } else  {
           sub = `签到结果: ${res.msg}`
+        }    
+          try {
+            $.msg($.name,sub);            
+          } catch (e) {
+            $.logErr(e, resp)
+          } finally {
+            resolve()
+          }
+        })
+      })
+    }
+async function token() {
+  return new Promise((resolve) => {
+  
+    signbody    = JSON.parse($.getdata($.signKeyKFX)).body;
+    signheaders = JSON.parse($.getdata($.signKeyKFX)).headers;
+
+    url_t = JSON.parse($.getdata($.signKeyKFX)).url;
+    const url = { 
+       url: `https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/getUserToken`, 
+    headers: {
+'Sec-Fetch-Dest' : `empty`,
+'Connection' : `keep-alive`,
+'Accept-Encoding' : `gzip, deflate, br`,
+'Content-Type' : `application/x-www-form-urlencoded`,
+'Sec-Fetch-Site' : `same-origin`,
+'Origin' : `https://fscrm.kraftheinz.net.cn`,
+'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.40(0x18002830) NetType/WIFI Language/zh_CN`,
+'Sec-Fetch-Mode' : `cors`,
+'Host' : `fscrm.kraftheinz.net.cn`,
+'Referer' : `https://fscrm.kraftheinz.net.cn/?code=011c8d1w3nDLg13Q4R3w32IAPl3c8d1-&state=&appid=wx65da983ae179e97b`,
+'Accept-Language' : `zh-CN,zh-Hans;q=0.9`,
+'Accept' : `*/*`,
+    
+    },
+    body: `code=011c8d1w3nDLg13Q4R3w32IAPl3c8d1-`
+  }
+   
+$.post(url,(err, resp, data)=> {   
+     let res = JSON.parse(data);
+     let sub = ''
+     
+        if (res.error_code == 0) {
+          Token = res.data.token
+          sub = `刷新token结果: 刷新成功`            
+        } else  {
+          sub = `刷新token结果: 刷新失败`
         }    
           try {
             $.msg($.name,sub);            
