@@ -1,7 +1,7 @@
 
 /**************************************
 作者:Zoo
-日期:2023.08.30
+日期:2023.08.31
 整合途虎养车app小程序积分签到
 cookie获取:公众号搜索途虎小程序登录,或者app登陆
 [rewrite_local]
@@ -143,7 +143,7 @@ async function info() {
      let res = JSON.parse(data);
      let sub = ''
         if (res.Code == 1) {
-          sub = `🎉当前积分: ${res.IntegralNumber}分`     
+          sub = `🎉当前积分: ${res.IntegralNumber}分 可抵现💰:${res.IntegralNumber / 100}元`     
         } else  {
           sub = `❌查询失败`
         }    
