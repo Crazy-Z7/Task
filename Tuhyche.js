@@ -1,9 +1,9 @@
 
 /**************************************
 作者:Zoo
-日期:2023.08.23
+日期:2023.08.30
 整合途虎养车app小程序积分签到
-cookie获取:公众号搜索途虎小程序登录到积分页面即可获取，可同时签到app和小程序
+cookie获取:公众号搜索途虎小程序登录,或者app登陆
 [rewrite_local]
 https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
 
@@ -39,6 +39,8 @@ if (isGetCookie) {
     await key(); 
     await $.wait(1000 * 1);
     await key2(); 
+    await $.wait(1000 * 1);
+    await info(); 
   })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
@@ -117,6 +119,36 @@ async function key2() {
         }    
           try {
             $.msg('途虎App',sub,det);            
+          } catch (e) {
+            $.logErr(e, resp)
+          } finally {
+            resolve()
+          }
+        })
+      })
+    }
+async function info() {
+  return new Promise((resolve) => {
+    const url = { 
+       url: 'https://api.tuhu.cn/User/GetPersonalCenterQuantity', 
+    headers: {
+'User-Agent' : signheaders['User-Agent'],
+'Authorization' : signheaders['Authorization'],
+'Host' : `api.tuhu.cn`,
+'blackbox': signheaders['blackbox'],
+    },
+    body: ''
+  }  
+    $.post(url,(err, resp, data)=> {   
+     let res = JSON.parse(data);
+     let sub = ''
+        if (res.Code == 1) {
+          sub = `🎉当前积分: ${res.IntegralNumber}分`     
+        } else  {
+          sub = `❌查询失败`
+        }    
+          try {
+            $.msg('当前总积分',sub);            
           } catch (e) {
             $.logErr(e, resp)
           } finally {
