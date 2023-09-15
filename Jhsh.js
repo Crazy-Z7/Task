@@ -75,15 +75,13 @@ async function key() {
   $.post(url,(err, resp, data)=> {   
      let res = JSON.parse(data);
      let sub = ''
-     let det = ''
         if (res.errCode == 0) {
-          sub = `签到结果: 签到成功`        
-          det += `距离领奖天数: ${res.data.NEST_AWARD_DAY}天`      
+          sub = `签到结果: 签到成功`              
         } else  {
           sub = `签到结果: ${res.errMsg}`
         }    
           try {
-            $.msg($.name,sub,det);            
+            $.msg($.name,sub);            
           } catch (e) {
             $.logErr(e, resp)
           } finally {
