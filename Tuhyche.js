@@ -1,9 +1,9 @@
 
 /**************************************
 作者:Zoo
-日期:2023.08.31
+日期:2023.09.18
 整合途虎养车app小程序积分签到
-cookie获取:公众号搜索途虎小程序登录,或者app登陆
+cookie获取:公众号搜索途虎小程序登录
 [rewrite_local]
 https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
 
