@@ -56,19 +56,10 @@ async function key() {
     const url = { 
        url: 'https://api.tuhu.cn/user/UserCheckInVersion1?channel=wxapp', 
     headers: {
-    'Host': 'api.tuhu.cn',
-'Connection': 'keep-alive',
-'content-type': 'application/json',
-'platformSource': 'uni-app',
-'api_level': '2',
-'currentPage': 'memberMallPackage/pages/memberMall/memberTask',
+'Host': 'api.tuhu.cn',
 'Authorization': signheaders['Authorization'],
-'distinct_id': signheaders['distinct_id'],
 'blackbox': signheaders['blackbox'],
-'Accept-Encoding': 'gzip,compress,br,deflate',
-'User-Agent': signheaders['User-Agent'],
-'Referer': 'https://servicewechat.com/wx27d20205249c56a3/745/page-frame.html',
-      
+'User-Agent': signheaders['User-Agent'],    
     },
     body: ''
   }
