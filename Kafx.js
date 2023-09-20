@@ -61,7 +61,7 @@ $.post(url,(err, resp, data)=> {
         if (res.error_code == 0) {
           sub = `签到结果: ${res.msg}`            
         } else  {
-          sub = `签到结果: ${res.msg}`
+          sub = `签到结果: 签到失败`
         }    
           try {
             $.msg($.name,sub);            
