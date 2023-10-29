@@ -1,9 +1,9 @@
 /**************************************
 作者:Zoo
-日期:2023.07.31
+日期:2023.10.29
 使用教程:登陆手动签到一次获取body即可
 [rewrite_local]
-^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A040 url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js
+^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode\=A3341A115 url script-request-body https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js
 
 [task_local]
 40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Jhsh.js, img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0910.jpeg, enabled=true
@@ -49,7 +49,7 @@ async function key() {
 
     url_t = JSON.parse($.getdata($.signKeyJHSH)).url;
     const url = { 
-       url: 'https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A040', 
+       url: 'https://yunbusiness.ccb.com/clp_coupon/txCtrl?txcode=A3341A115', 
     headers: {
 'Host': 'yunbusiness.ccb.com',
 'MID': '162',
