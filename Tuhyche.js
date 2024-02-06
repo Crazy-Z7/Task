@@ -136,11 +136,9 @@ async function main() {
     const result1 = await key();
     const result2 = await key2();
     const result3 = await info();
-    const sub = `【途虎养车签到】\n${result1.sub}\n${result2.sub}\n${result3}`;
-    const det = `【途虎养车签到详情】\n${result1.det}\n\n`;
+    const sub = `${result1.sub}\n${result2.sub}\n${result3}`;
     console.log(sub);
-    console.log(det);
-    $.msg('途虎养车签到', sub, det);
+    $.msg('途虎养车签到', sub);
 }
 
 main().then(() => {
