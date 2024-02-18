@@ -1,9 +1,9 @@
 
 /**************************************
 作者:Zoo
-日期:2024.02.05
+日期:2024.02.18
 整合途虎养车app小程序积分签到
-cookie获取:公众号搜索途虎小程序登录
+cookie获取:公众号搜索途虎小程序登录，点击积分页面
 [rewrite_local]
 https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
 
@@ -133,12 +133,14 @@ async function info() {
 }
 
 async function main() {
-    const result1 = await key();
-    const result2 = await key2();
-    const result3 = await info();
-    const sub = `${result1.sub}\n${result2.sub}\n${result3}`;
-    console.log(sub);
-    $.msg('途虎养车签到', sub);
+    const results = await Promise.all([key(), key2(), info()]);
+    const [result1, result2, result3] = results;
+    // 生成统一的通知消息
+    const notificationMessage = [result1.sub, result2.sub, result3].join('\n');
+
+    console.log(notificationMessage);
+    
+    $.msg('途虎养车签到结果', '', notificationMessage);
 }
 
 main().then(() => {
