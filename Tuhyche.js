@@ -68,15 +68,15 @@ async function sign1() {
                 let title = '';
                 let details = '';
                 if (res.Code == 1) {
-                    title = `签到结果: 签到成功`;
+                    title = `小程序签到结果: 签到成功`;
                     details += `积分增加:${res.AddIntegral}` + `\n`;
                     details += `已连续签到:${res.NeedDays}` + `/7天`;
                 } else {
-                    title = `签到结果: ${res.Message}`;
+                    title = `小程序签到结果: ${res.Message}`;
                 }
                 resolve({title, details});
             } catch (error) {
-                resolve({ title: `签到结果: JSON解析失败`, details: '' });
+                resolve({ title: `小程序签到结果: JSON解析失败`, details: '' });
             }
         })
     });
@@ -98,15 +98,15 @@ async function sign2() {
                 let title = '';
                 let details = '';
                 if (res.Code == 1) {
-                    title = `小程序签到结果: 签到成功`;
+                    title = `App签到结果: 签到成功`;
                     details += `积分增加:${res.AddIntegral}` + `\n`;
                     details += `已连续签到:${res.NeedDays}` + `/7天`;
                 } else {
-                    title = `小程序签到结果: ${res.Message}`;
+                    title = `App签到结果: ${res.Message}`;
                 }
                 resolve({title, details});
             } catch (error) {
-                resolve({ title: `小程序签到结果: JSON解析失败`, details: '' });
+                resolve({ title: `App签到结果: JSON解析失败`, details: '' });
             }
         })
     });
