@@ -1,11 +1,11 @@
 
 /**************************************
 作者:Zoo
-日期:2024.02.19
+日期:2025.01.16
 整合途虎养车app小程序积分签到
 cookie获取:公众号搜索途虎小程序登录，点击积分页面
 [rewrite_local]
-https://api.tuhu.cn/User/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
+^https:\/\/api\.tuhu\.cn\/User\/GetUserCurrentAndNextGradeInfo url script-request-header https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js
 
 [task_local]
 40 8 * * * https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js, tag=途虎养车积分签到, img-url=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0905.jpeg, enabled=true
