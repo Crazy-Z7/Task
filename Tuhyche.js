@@ -26,7 +26,7 @@ if (isGetCookie) {
 
     const session = {
       url: $request.url,
-      body: $request.body,
+      body: $request.body || '',
       token: headers['authorization'] || '',
       blackbox: headers['blackbox'] || '',
     }
@@ -46,25 +46,26 @@ if (isGetCookie) {
     .finally(() => $.done())
 
 } else {
-  !(async () => {
-    await sign('wxapp', '小程序')
-    await $.wait(1000)
-    await sign('app', 'App')
-    await $.wait(1000)
-    const pointsMessage = await getPoints()
-    $.msg($.name, '', pointsMessage)
-  })()
+  main()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
 }
 
+function safeJSONParse(str) {
+  if (typeof str !== 'string') return null
+  const s = str.trim()
+  if (!s) return null
+  try { return JSON.parse(s) } catch (_) { return null }
+}
+
+// ✅ 统一签到：同一个接口，循环不同 channel
 async function sign(channel, name) {
   return new Promise((resolve) => {
-    const session = JSON.parse($.getdata($.signKeyTU) || '{}')
+    const session = safeJSONParse($.getdata($.signKeyTU) || '') || {}
     $.token = session.token || ''
     $.blackbox = session.blackbox || ''
 
-    const url = {
+    const req = {
       url: `https://cl-gateway.tuhu.cn/cl-common-api/api/dailyCheckIn/userCheckIn`,
       headers: {
         'Authorization': $.token,
@@ -80,33 +81,94 @@ async function sign(channel, name) {
       body: JSON.stringify({ channel })
     }
 
-    $.post(url, (err, resp, data) => {
-      try {
-        let res = JSON.parse(data)
-        let title = ''
-        let details = ''
+    $.post(req, (err, resp, data) => {
+      const sc = resp?.statusCode
+      if (err) {
+        console.log(`${name}签到请求错误: ${err}`)
+        return resolve({ title: `${name}签到结果: 请求错误`, details: String(err) })
+      }
 
-        const add = res?.data?.rewardIntegral ?? res?.AddIntegral
-        const days = res?.data?.continuousDays ?? res?.NeedDays
-        const ok = add !== undefined || res?.Code == 1 || res?.code == 10000
+      const res = safeJSONParse(data)
+      if (!res) {
+        console.log(`${name}签到返回非JSON, status=${sc}`)
+        console.log(String(data).slice(0, 300))
+        return resolve({
+          title: `${name}签到结果: JSON解析失败`,
+          details: `status=${sc}\n${String(data).slice(0, 200)}`
+        })
+      }
 
-        if (ok && add !== undefined) {
-          title = `${name}签到结果: 签到成功`
-          details += `积分增加:${add}\n`
-          details += `已连续签到:${days ?? '-'}\/7天`
-        } else if (ok && add === undefined) {
-          title = `${name}签到结果: 签到成功`
-          details += res?.message ? `提示:${res.message}` : ''
-        } else {
-          title = `${name}签到结果: ${res?.message || res?.Message || '签到失败'}`
-        }
+      let title = ''
+      let details = ''
+      const add = res?.data?.rewardIntegral
+      const days = res?.data?.continuousDays
 
-        resolve({ title, details })
-      } catch (e) {
-        resolve({ title: `${name}签到结果: JSON解析失败`, details: '' })
+      if (add !== undefined) {
+        title = `${name}签到结果: 签到成功`
+        details = `积分增加:${add}\n已连续签到:${days ?? '-'}\/7天`
+      } else {
+        title = `${name}签到结果: ${res?.message || '签到失败'}`
+        details = res?.data ? $.toStr(res.data) : ''
+      }
+      resolve({ title, details })
+    })
+  })
+}
+
+async function getPoints() {
+  return new Promise((resolve) => {
+    const session = safeJSONParse($.getdata($.signKeyTU) || '') || {}
+    $.token = session.token || ''
+
+    const req = {
+      url: 'https://api.tuhu.cn/User/GetPersonalCenterQuantity',
+      headers: {
+        'Authorization': $.token,
+        'Content-Type': 'application/json'
+      },
+      body: ''
+    }
+
+    $.post(req, (err, resp, data) => {
+      const sc = resp?.statusCode
+      if (err) {
+        console.log(`积分查询请求错误: ${err}`)
+        return resolve(`❌积分查询失败 - 请求错误: ${String(err)}`)
+      }
+
+      const res = safeJSONParse(data)
+      if (!res) {
+        console.log(`积分查询返回非JSON, status=${sc}`)
+        console.log(String(data).slice(0, 300))
+        return resolve(`❌积分查询失败 - JSON解析异常\nstatus=${sc}\n${String(data).slice(0, 200)}`)
+      }
+
+      if (res.Code == 1) {
+        resolve(`🎉当前积分: ${res.IntegralNumber}分 可抵现💰:${res.IntegralNumber / 100}元`)
+      } else {
+        resolve(`❌积分查询失败`)
       }
     })
   })
+}
+
+async function main() {
+  const signResult1 = await sign('wxapp', '小程序')
+  await $.wait(1000)
+  const signResult2 = await sign('app', 'App')
+  await $.wait(1000)
+  const pointsResult = await getPoints()
+
+  const notificationMessage = [
+    signResult1.title,
+    signResult1.details,
+    signResult2.title,
+    signResult2.details,
+    pointsResult
+  ].filter(Boolean).join('\n')
+
+  console.log(notificationMessage)
+  $.msg('途虎养车签到结果', '', notificationMessage)
 }
 
 async function getPoints() {
