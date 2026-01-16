@@ -51,7 +51,6 @@ if (isGetCookie) {
         .finally(() => $.done());
 }
 
-// ✅ 改成一个签到函数：循环不同 channel 参数即可
 async function sign(channel, name) {
     return new Promise((resolve) => {
         const session = JSON.parse($.getdata($.signKeyTU) || '{}');
