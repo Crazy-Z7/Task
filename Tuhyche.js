@@ -24,7 +24,7 @@ if (isGetCookie) {
         session.url = $request.url;
         session.body = $request.body;
         session.headers = $request.headers;
-        
+
         if ($.setdata(JSON.stringify(session), $.signKeyTU)) {
             $.subt = `获取会话: 成功!`
             console.log(`${$.name}, ${$.subt}`)
@@ -34,30 +34,32 @@ if (isGetCookie) {
         }
         $.msg($.name, $.subt, '');
     })()
-    .catch((e) => $.logErr(e))
-    .finally(() => $.done());
+        .catch((e) => $.logErr(e))
+        .finally(() => $.done());
 
 } else {
     !(async () => {
-        await sign1(); 
-        await $.wait(1000); 
-        await sign2(); 
-        await $.wait(1000); 
+        await sign('wxapp', '小程序');
+        await $.wait(1000);
+        await sign('app', 'App');
+        await $.wait(1000);
         const pointsMessage = await getPoints();
-        $.msg($.name, '', pointsMessage); 
-        
+        $.msg($.name, '', pointsMessage);
+
     })()
-    .catch((e) => $.logErr(e))
-    .finally(() => $.done());
+        .catch((e) => $.logErr(e))
+        .finally(() => $.done());
 }
 
-async function sign1() {
+// ✅ 改成一个签到函数：循环不同 channel 参数即可
+async function sign(channel, name) {
     return new Promise((resolve) => {
-        signbody = JSON.parse($.getdata($.signKeyTU)).body;
-        signheaders = JSON.parse($.getdata($.signKeyTU)).headers;
+        const session = JSON.parse($.getdata($.signKeyTU) || '{}');
+        const signheaders = session.headers || {};
+        const signbody = session.body || '';
 
         const url = {
-            url: 'https://api.tuhu.cn/user/UserCheckInVersion1?channel=wxapp',
+            url: `https://api.tuhu.cn/user/UserCheckInVersion1?channel=${channel}`,
             headers: signheaders,
             body: signbody
         };
@@ -68,45 +70,15 @@ async function sign1() {
                 let title = '';
                 let details = '';
                 if (res.Code == 1) {
-                    title = `小程序签到结果: 签到成功`;
-                    details += `积分增加:${res.AddIntegral}` + `\n`;
-                    details += `已连续签到:${res.NeedDays}` + `/7天`;
+                    title = `${name}签到结果: 签到成功`;
+                    details += `积分增加:${res.AddIntegral}\n`;
+                    details += `已连续签到:${res.NeedDays}/7天`;
                 } else {
-                    title = `小程序签到结果: ${res.Message}`;
+                    title = `${name}签到结果: ${res.Message}`;
                 }
-                resolve({title, details});
+                resolve({ title, details });
             } catch (error) {
-                resolve({ title: `小程序签到结果: JSON解析失败`, details: '' });
-            }
-        })
-    });
-}
-
-async function sign2() {
-    return new Promise((resolve) => {
-        const signHeaders = JSON.parse($.getdata($.signKeyTU)).headers;
-
-        const url = {
-            url: 'https://cl-gateway.tuhu.cn/cl-common-api/api/dailyCheckIn/userCheckIn',
-            headers: signHeaders,
-            body: ''
-        };
-
-        $.post(url, (err, resp, data) => {
-            try {
-                let res = JSON.parse(data);
-                let title = '';
-                let details = '';
-                if (res.Code == 1) {
-                    title = `App签到结果: 签到成功`;
-                    details += `积分增加:${res.AddIntegral}` + `\n`;
-                    details += `已连续签到:${res.NeedDays}` + `/7天`;
-                } else {
-                    title = `App签到结果: ${res.Message}`;
-                }
-                resolve({title, details});
-            } catch (error) {
-                resolve({ title: `App签到结果: JSON解析失败`, details: '' });
+                resolve({ title: `${name}签到结果: JSON解析失败`, details: '' });
             }
         })
     });
@@ -140,8 +112,8 @@ async function getPoints() {
 }
 
 async function main() {
-    const signResult1 = await sign1(); // 第一个签到操作
-    const signResult2 = await sign2(); // 第二个签到操作
+    const signResult1 = await sign('wxapp', '小程序'); // 第一个签到操作
+    const signResult2 = await sign('app', 'App'); // 第二个签到操作
     await new Promise(resolve => setTimeout(resolve, 1000)); // 等待1秒
     const pointsResult = await getPoints(); // 积分查询
 
@@ -155,7 +127,7 @@ async function main() {
     ].join('\n');
 
     console.log(notificationMessage);
-    
+
     $.msg('途虎养车签到结果', '', notificationMessage);
 }
 
