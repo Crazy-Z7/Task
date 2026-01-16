@@ -87,7 +87,7 @@ async function sign2() {
         const signHeaders = JSON.parse($.getdata($.signKeyTU)).headers;
 
         const url = {
-            url: 'https://api.tuhu.cn/User/UserCheckInVersion1',
+            url: 'https://cl-gateway.tuhu.cn/cl-common-api/api/dailyCheckIn/userCheckIn',
             headers: signHeaders,
             body: ''
         };
